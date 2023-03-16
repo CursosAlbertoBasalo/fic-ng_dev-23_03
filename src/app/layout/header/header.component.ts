@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: [],
 })
 export class HeaderComponent {
-  title = 'CITIC FIC UDC ';
+  title = 'Activity Bookings';
 }
