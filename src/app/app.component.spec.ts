@@ -5,12 +5,8 @@ import { AppComponent } from './app.component';
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
+      imports: [RouterTestingModule],
+      declarations: [AppComponent],
     }).compileComponents();
   });
 
@@ -23,13 +19,15 @@ describe('AppComponent', () => {
   it(`should have as title 'fic-angular_dev-marzo'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('fic-angular_dev-marzo');
+    expect(app.appTitle).toEqual('fic-angular_dev-marzo');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('fic-angular_dev-marzo app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain(
+      'fic-angular_dev-marzo app is running!'
+    );
   });
 });

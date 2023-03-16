@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-copy-right',
@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./copy-right.component.css'],
 })
 export class CopyRightComponent {
-  title = 'Activity Bookings';
+  @Input() title = '';
   authorName = 'Alberto Basalo';
   authorUrl = 'https://albertobasalo.dev';
   public getAuthorCaption() {
