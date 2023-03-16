@@ -36,3 +36,22 @@ span {
   margin-right: 0.5rem;
 }
 ```
+
+## 1 - Components
+
+```bash
+# Create header component
+ng generate component header
+# Create layout module
+ng g m layout
+# Create footer component in layout module
+ng g c layout/footer
+# move header to layout module
+# Create copyright component
+ng g c layout/copy-right
+```
+
+- Use {{ }} or [attribute] to evaluate expressions
+- Call functions in template for complex expressions
+- Use @Input() to pass data from parent to child component
+- Use | uppercase to transform data

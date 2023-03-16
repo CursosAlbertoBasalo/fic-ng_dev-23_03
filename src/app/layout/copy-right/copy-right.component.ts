@@ -9,6 +9,7 @@ export class CopyRightComponent {
   @Input() title = '';
   authorName = 'Alberto Basalo';
   authorUrl = 'https://albertobasalo.dev';
+
   public getAuthorCaption() {
     return `© ${new Date().getFullYear()} By ${this.authorName}`;
   }
