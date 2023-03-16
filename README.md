@@ -1,8 +1,23 @@
-# Fic Angular Dev Marzo
+# Fic Angular Developer 2023-03
 
-[https://github.com/classroomLabs/fic-angular_dev-marzo](https://github.com/classroomLabs/fic-angular_dev-marzo)
+[https://github.com/classroomLabs/fic-ng_dev-23_03](https://github.com/classroomLabs/fic-ng_dev-23_03)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.2.
+
+`npx -p @angular/cli@15.2.2 ng new fic-ng_dev-23_03`
+
+| DATE       | TIME          |
+| ---------- | ------------- |
+| MAR 14 MAR | 09:30 – 12:30 |
+| JUE 16 MAR | 16:00 – 19:00 |
+| JUE 23 MAR | 16:00 – 19:00 |
+| JUE 30 MAR | 09:30 – 12:30 |
+| LUN 10 ABR | 16:00 – 19:00 |
+| MAR 11 ABR | 16:00 – 19:00 |
+| JUE 13 ABR | 16:00 – 19:00 |
+| LUN 17 ABR | 16:00 – 19:00 |
+| MAR 18 ABR | 16:00 – 19:00 |
+| JUE 20 ABR | 16:00 – 19:00 |
 
 ## Development server
 
