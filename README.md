@@ -6,6 +6,17 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 `npx -p @angular/cli@15.2.2 ng new fic-ng_dev-23_03`
 
+```bash
+# clone repo
+git clone https://github.com/classroomLabs/fic-ng_dev-23_03.git
+# install dependencies
+cd fic-ng_dev-23_03
+npm install
+# run app
+npm start
+# open browser at http://localhost:4200/
+```
+
 | DATE       | TIME          |
 | ---------- | ------------- |
 | MAR 14 MAR | 09:30 – 12:30 |
