@@ -67,3 +67,39 @@ ng g c layout/copy-right
 - Use `| uppercase` (or any other _pipe_) to transform data presentation
 
 > 📋 To do....
+
+## 2 - Templates
+
+Home page with list of published activities
+
+### Models
+
+`src\app\core\models\activity.type.ts`
+
+```typescript
+export type Id = string | number;
+export type AgeCategory = "adult" | "child" | "family";
+export type ActivityStates =
+  | "draft"
+  | "published"
+  | "cancelled"
+  | "confirmed"
+  | "finished";
+export type Activity = {
+  ageCategory: AgeCategory;
+  currency: string;
+  date: string;
+  description: string;
+  id: Id;
+  location: string;
+  maxParticipants: number;
+  minParticipants: number;
+  price: number;
+  slug: string;
+  state: ActivityStates;
+  title: string;
+  userId: Id;
+};
+```
+
+### Data
