@@ -120,3 +120,87 @@ export type Activity = {
 ### 🫵🏼 Practice
 
 - [ ] Extract activity list Item to a component in a Shared module
+
+## 3 - Routes
+
+```bash
+# create a home component
+ng g c home
+# create a contact component
+ng g c contact
+# create a lazy module
+ng g m about --routing
+# with its component
+ng g c about
+# create a lazy module with routing pointing to register
+ng g m register --route=auth/register -m=app
+```
+
+### 🫵🏼 practice:
+
+- [ ] create a lazy module with routing pointing to login
+
+## 4 - Services
+
+```bash
+# create a service
+ng g s core/activities
+# consume service in home component
+# create a lazy module with routing pointing to activities
+# consume service in activities component
+ng g m activities --route=activities -m=app
+# create a lazy module with parameters
+# consume service in activity component
+ng g m activity --route=activities/:title -m=app
+```
+
+### 🫵🏼 practice
+
+- [ ] create a service for currency conversion
+
+## 5 - Forms
+
+```bash
+# register form
+# 🫵🏼 practice: login form
+# validate register form
+# 🫵🏼 practice: validate login form (extract common code to a service)
+# generate service
+ng g s core/forms
+# generate form-error component
+ng g c shared/form-error --export
+```
+
+## 6 - Http
+
+```bash
+# import HttpClientModule in shared module
+# import { HttpClientModule } from '@angular/common/http';
+# use httpClient on activities service to get a list of activities
+# generate users service
+ng g s core/users
+# post a new user on register service (use @Output)
+npx ng g c register/register-form
+```
+
+### 🫵🏼 practice:
+
+- [ ] use httpClient on login service to login (use @Output)
+
+## 🫵🏼 Final Practice
+
+- [ ] add a new activity
+
+```bash
+# route /activities/new
+# form to edit an activity
+# use httpClient on activities service to post a new activity
+# use container - presenter event
+```
+
+### Compile to production
+
+```bash
+npx ng build --prod
+npx lite-server --baseDir="dist/minsait-angular_basics-febrero"
+```
