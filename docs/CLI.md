@@ -23,6 +23,8 @@ npm install @picocss/pico
 "node_modules/@picocss/pico/css/pico.min.css",
 ```
 
+Global styles in `src/styles.css`
+
 ```css
 body {
   padding: 0.8rem;
@@ -42,16 +44,26 @@ span {
 ```bash
 # Create header component
 ng generate component header
+## Alternative using remote execution
+npx ng generate component header
+## Alternative using remote specific version
+npx -p @angular/cli@15.0.0 ng generate component header
+```
+
+```bash
 # Create layout module
 ng g m layout
 # Create footer component in layout module
 ng g c layout/footer
-# move header to layout module
+# export footer component
+# move header to layout module and export it
 # Create copyright component
 ng g c layout/copy-right
 ```
 
-- Use {{ }} or [attribute] to evaluate expressions
-- Call functions in template for complex expressions
-- Use @Input() to pass data from parent to child component
-- Use | uppercase to transform data
+- Use `{{ expression }}` or `attribute="[expression]"` to dynamically bind data
+- Call functions in template for complex expressions (keep template simple)
+- Use `@Input()` to pass data from parent to child component
+- Use `| uppercase` (or any other _pipe_) to transform data presentation
+
+> 📋 To do....
