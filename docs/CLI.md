@@ -68,11 +68,10 @@ ng g c layout/footer
 
 - [ ] Create a copyright component private in the Layout module
 
----
-
-> 📋 To do....
-
----
+```bash
+ng g m shared
+ng g c shared/activity-item --export
+```
 
 ## 2 - Templates
 
@@ -116,6 +115,12 @@ export type Activity = {
 - filter activities by published state
 - sort activities by date
 - count activities
+
+---
+
+> 📋 To do....
+
+---
 
 ### 🫵🏼 Practice
 
