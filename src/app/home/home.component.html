@@ -1,4 +1,8 @@
-<h3>List of activities</h3>
+<header class="grid">
+  <h3>List of activities</h3>
+  <button (click)="changeOrder()">Sort ⬆️</button>
+</header>
+Current order {{ order }}
 <ul>
   <li *ngFor="let activity of publishedActivities">
     <span> {{ activity.title }} </span>
