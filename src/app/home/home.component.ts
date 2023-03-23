@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ACTIVITIES } from '../data/activities.data';
+import { Activity } from '../data/activity.type';
 
 @Component({
   selector: 'app-home',
@@ -7,23 +8,31 @@ import { ACTIVITIES } from '../data/activities.data';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-  //private activities: Activity[] = ACTIVITIES;
+  activities: Activity[] = [];
 
-  order = 1;
+  private order = 1;
+  private searchTerm = '';
 
-  publishedActivities = ACTIVITIES.filter((a) => a.state === 'published').sort(
-    (a, b) => (a.price - b.price) * this.order
-  );
+  constructor() {
+    this.setActivities();
+  }
 
   changeOrder() {
     this.order = this.order * -1;
-    console.log(this.order);
-    this.publishedActivities = ACTIVITIES.filter(
-      (a) => a.state === 'published'
-    ).sort((a, b) => (a.price - b.price) * this.order);
+    this.setActivities();
   }
 
-  // getPublishedActivities(): Activity[] {
-  //   return this.activities.filter((a) => a.state === 'published');
-  // }
+  onSearchChange(event: any) {
+    this.searchTerm = (event.target as HTMLInputElement).value;
+    this.setActivities();
+  }
+
+  private setActivities() {
+    this.activities = ACTIVITIES.filter(
+      (a) =>
+        a.state === 'published' &&
+        (this.searchTerm === '' ||
+          a.title.toLowerCase().includes(this.searchTerm.toLowerCase()))
+    ).sort((a, b) => (a.price - b.price) * this.order);
+  }
 }

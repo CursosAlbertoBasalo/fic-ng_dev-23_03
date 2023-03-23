@@ -1,10 +1,10 @@
 <header class="grid">
-  <h3>List of activities</h3>
+  <b>List of activities</b>
+  <input type="text" placeholder="Search" (change)="onSearchChange($event)" />
   <button (click)="changeOrder()">Sort ⬆️</button>
 </header>
-Current order {{ order }}
 <ul>
-  <li *ngFor="let activity of publishedActivities">
+  <li *ngFor="let activity of activities">
     <span> {{ activity.title }} </span>
     <span> 📅 {{ activity.date | date : "dd-MMM-yy" }} </span>
     <span>
