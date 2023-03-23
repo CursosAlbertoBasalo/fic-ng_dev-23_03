@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { ACTIVITIES } from '../data/activities.data';
-import { Activity } from '../data/activity.type';
 
 @Component({
   selector: 'app-home',
@@ -8,5 +7,11 @@ import { Activity } from '../data/activity.type';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-  activities: Activity[] = ACTIVITIES;
+  //private activities: Activity[] = ACTIVITIES;
+
+  publishedActivities = ACTIVITIES.filter((a) => a.state === 'published');
+
+  // getPublishedActivities(): Activity[] {
+  //   return this.activities.filter((a) => a.state === 'published');
+  // }
 }

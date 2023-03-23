@@ -1,8 +1,15 @@
 <h3>List of activities</h3>
 <ul>
-  <li *ngFor="let activity of activities">
-    <span *ngIf="activity.state === 'published'">
-      {{ activity.title }} {{ activity.state }}
+  <li *ngFor="let activity of publishedActivities">
+    <span> {{ activity.title }} </span>
+    <span> 📅 {{ activity.date | date : "dd-MMM-yy" }} </span>
+    <span>
+      <span *ngIf="activity.price < 100; else expensive"> 💸 </span>
+      <ng-template #expensive> 🤑 </ng-template>
+      {{ activity.price | currency : activity.currency }}
+    </span>
+    <span [class]="activity.ageCategory">
+      {{ activity.ageCategory | titlecase }}
     </span>
   </li>
 </ul>
