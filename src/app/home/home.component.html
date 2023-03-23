@@ -4,7 +4,7 @@
   <button (click)="changeOrder()">Sort ⬆️</button>
 </header>
 <ul>
-  <li *ngFor="let a of activities">
-    <app-activity-item [activity]="a"></app-activity-item>
+  <li *ngFor="let activity of activities">
+    <app-activity-item [activity]="activity"></app-activity-item>
   </li>
 </ul>
