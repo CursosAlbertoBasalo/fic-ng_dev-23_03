@@ -59,7 +59,7 @@ ng g c layout/footer
 # move header to layout module and export it
 ```
 
-- Use `{{ expression }}` or `attribute="[expression]"` to dynamically bind data
+- Use `{{ expression }}` or `[attribute]="expression"` to dynamically bind data
 - Call functions in template for complex expressions (keep template simple)
 - Use `@Input()` to pass data from parent to child component
 - Use `| uppercase` (or any other _pipe_) to transform data presentation

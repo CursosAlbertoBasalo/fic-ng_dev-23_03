@@ -1,0 +1,8 @@
+<h3>List of activities</h3>
+<ul>
+  <li *ngFor="let activity of activities">
+    <span *ngIf="activity.state === 'published'">
+      {{ activity.title }} {{ activity.state }}
+    </span>
+  </li>
+</ul>

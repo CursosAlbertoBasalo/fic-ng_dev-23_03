@@ -4,7 +4,7 @@ export type Id = string | number;
 
 export type AgeCategory = 'adult' | 'child' | 'family';
 
-export type ActivityStatus =
+export type ActivityState =
   | 'draft'
   | 'published'
   | 'cancelled'
@@ -22,7 +22,7 @@ export type Activity = {
   minParticipants: number;
   price: number;
   slug: string;
-  status: ActivityStatus;
+  state: ActivityState;
   title: string;
   userId: Id;
 };

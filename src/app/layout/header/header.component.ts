@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: [],
 })
 export class HeaderComponent {
-  @Input() title = '';
+  @Input() applicationTitle: string = '';
 }

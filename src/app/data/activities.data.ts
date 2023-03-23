@@ -1,6 +1,8 @@
 //  ! Sample data for activities
 
-export const ACTIVITIES = [
+import { Activity } from './activity.type';
+
+export const ACTIVITIES: Activity[] = [
   {
     ageCategory: 'adult',
     currency: 'USD',
