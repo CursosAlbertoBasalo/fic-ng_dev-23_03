@@ -1,19 +1,10 @@
 <header class="grid">
-  <b>List of activities</b>
-  <input type="text" placeholder="Search" (change)="onSearchChange($event)" />
+  <h3>List of activities</h3>
+  <input type="search" placeholder="Search" (keyup)="onSearchChange($event)" />
   <button (click)="changeOrder()">Sort ⬆️</button>
 </header>
 <ul>
-  <li *ngFor="let activity of activities">
-    <span> {{ activity.title }} </span>
-    <span> 📅 {{ activity.date | date : "dd-MMM-yy" }} </span>
-    <span>
-      <span *ngIf="activity.price < 100; else expensive"> 💸 </span>
-      <ng-template #expensive> 🤑 </ng-template>
-      {{ activity.price | currency : activity.currency }}
-    </span>
-    <span [class]="activity.ageCategory">
-      {{ activity.ageCategory | titlecase }}
-    </span>
+  <li *ngFor="let a of activities">
+    <app-activity-item [activity]="a"></app-activity-item>
   </li>
 </ul>

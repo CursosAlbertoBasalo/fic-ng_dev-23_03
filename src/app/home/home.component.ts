@@ -31,8 +31,7 @@ export class HomeComponent {
     this.activities = ACTIVITIES.filter(
       (a) =>
         a.state === 'published' &&
-        (this.searchTerm === '' ||
-          a.title.toLowerCase().includes(this.searchTerm.toLowerCase()))
+        a.title.toLowerCase().includes(this.searchTerm.toLowerCase())
     ).sort((a, b) => (a.price - b.price) * this.order);
   }
 }
