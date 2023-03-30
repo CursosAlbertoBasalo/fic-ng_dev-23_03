@@ -1,2 +1,7 @@
 <h3>Activities administration</h3>
+
+<ul *ngFor="let activity of activities">
+  <app-activity-item [activity]="activity"></app-activity-item>
+</ul>
+
 <button routerLink="new">Create a new activity</button>
