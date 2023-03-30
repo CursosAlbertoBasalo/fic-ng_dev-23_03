@@ -116,15 +116,15 @@ export type Activity = {
 - sort activities by date
 - count activities
 
+### 🫵🏼 Practice
+
+- [ ] Extract activity list Item to a component in a Shared module
+
 ---
 
 > 📋 To do....
 
 ---
-
-### 🫵🏼 Practice
-
-- [ ] Extract activity list Item to a component in a Shared module
 
 ## 3 - Routes
 
@@ -161,7 +161,7 @@ ng g m activity --route=activities/:title -m=app
 
 ### 🫵🏼 practice
 
-- [ ] create a service for currency conversion
+- [ ] create a helper service for parameters (extract common code to a service)
 
 ## 5 - Forms
 
