@@ -1,3 +1,9 @@
 <header>
-  <div routerLink="">⚠️ {{ applicationTitle | uppercase }}</div>
+  <nav>
+    <div routerLink="">⚠️ {{ applicationTitle | uppercase }}</div>
+    <ul>
+      <li><a routerLink="auth/login">🔐 Log in</a></li>
+      <li><a routerLink="auth/register">🔏 Register</a></li>
+    </ul>
+  </nav>
 </header>
