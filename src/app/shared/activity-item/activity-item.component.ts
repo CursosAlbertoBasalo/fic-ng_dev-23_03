@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Activity } from 'src/app/data/activity.type';
+import { Activity, ACTIVITY_EMPTY } from 'src/app/data/activity.type';
 
 @Component({
   selector: 'app-activity-item',
@@ -7,5 +7,5 @@ import { Activity } from 'src/app/data/activity.type';
   styleUrls: ['./activity-item.component.css'],
 })
 export class ActivityItemComponent {
-  @Input() activity!: Activity;
+  @Input() activity: Activity = ACTIVITY_EMPTY;
 }
