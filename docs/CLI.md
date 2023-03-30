@@ -138,7 +138,7 @@ ng g m about --routing
 # with its component
 ng g c about
 # create a lazy module with routing pointing to register
-ng g m register --route=auth/register -m=app
+ng g m auth/register --route=auth/register -m=app
 ```
 
 ### 🫵🏼 practice:
