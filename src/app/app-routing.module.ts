@@ -12,9 +12,15 @@ const routes: Routes = [
     path: 'about',
     component: AboutComponent,
   },
+  {
+    path: 'contact',
+    loadChildren: () =>
+      import('./contact/contact.module').then((m) => m.ContactModule),
+  },
 ];
 
 @NgModule({
+  declarations: [],
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
