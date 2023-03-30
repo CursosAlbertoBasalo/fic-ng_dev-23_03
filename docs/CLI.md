@@ -153,7 +153,7 @@ ng g s core/activities
 # consume service in home component
 # create a lazy module with routing pointing to activities
 # consume service in activities component
-ng g m activities --route=activities -m=app
+ng g m activities/new-activity --route=new -m=activities
 # create a lazy module with parameters
 # consume service in activity component
 ng g m activity --route=activities/:title -m=app
