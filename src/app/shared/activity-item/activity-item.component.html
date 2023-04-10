@@ -1,4 +1,6 @@
-<span> {{ activity.title }} </span>
+<span>
+  <a [routerLink]="['/', 'activities', activity.slug]">{{ activity.title }} </a>
+</span>
 <span> 📅 {{ activity.date | date : "dd-MMM-yy" }} </span>
 <span>
   <ng-container *ngIf="activity.price < 100; else expensive"> 💸 </ng-container>

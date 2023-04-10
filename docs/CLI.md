@@ -120,12 +120,6 @@ export type Activity = {
 
 - [ ] Extract activity list Item to a component in a Shared module
 
----
-
-> 📋 To do....
-
----
-
 ## 3 - Routes
 
 ```bash
@@ -156,7 +150,7 @@ ng g s core/activities
 ng g m activities/new-activity --route=new -m=activities
 # create a lazy module with parameters
 # consume service in activity component
-ng g m activity --route=activities/:title -m=app
+ng g m activities/detail-activity --route=:slug -m=activities
 ```
 
 ### 🫵🏼 practice
