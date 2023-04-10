@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
   providedIn: 'root',
 })
 export class UtilService {
-  getParam(activatedRoute: ActivatedRoute, param: string = 'slug'): string {
-    return activatedRoute.snapshot.paramMap.get(param) || '';
+  getParam(activatedRoute: ActivatedRoute, paramName = 'slug'): string {
+    return activatedRoute.snapshot.paramMap.get(paramName) || '';
   }
 }
