@@ -1,1 +1,32 @@
 <h3>🔏 Register</h3>
+<form [formGroup]="form">
+  <fieldset>
+    <div>
+      <label for="fullName">Full name</label>
+      <input id="fullName" name="fullName" formControlName="fullName" />
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" formControlName="email" />
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input
+        id="password"
+        name="password"
+        type="password"
+        formControlName="password"
+      />
+    </div>
+    <div>
+      <label for="repeatedPassword">Repeat the password</label>
+      <input
+        id="repeatedPassword"
+        name="repeatedPassword"
+        type="password"
+        formControlName="repeatedPassword"
+      />
+    </div>
+  </fieldset>
+  <button (click)="onRegisterClick()">Register</button>
+</form>
