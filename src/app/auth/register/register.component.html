@@ -3,14 +3,17 @@
   <fieldset>
     <div>
       <label for="fullName">Full name</label>
+      <small *ngIf="showError('fullName')">🔥 {{ getError("fullName") }}</small>
       <input id="fullName" name="fullName" formControlName="fullName" />
     </div>
     <div>
       <label for="email">Email</label>
+      <small *ngIf="showError('email')"> 🔥 {{ getError("email") }} </small>
       <input id="email" name="email" type="email" formControlName="email" />
     </div>
     <div>
       <label for="password">Password</label>
+      <small *ngIf="showError('password')">🔥 {{ getError("password") }}</small>
       <input
         id="password"
         name="password"
@@ -20,6 +23,9 @@
     </div>
     <div>
       <label for="repeatedPassword">Repeat the password</label>
+      <small *ngIf="showError('repeatedPassword')"
+        >🔥 {{ getError("repeatedPassword") }}
+      </small>
       <input
         id="repeatedPassword"
         name="repeatedPassword"
@@ -28,5 +34,10 @@
       />
     </div>
   </fieldset>
-  <button (click)="onRegisterClick()">Register</button>
+  <button [disabled]="form.invalid" (click)="onRegisterClick()">
+    Register
+  </button>
 </form>
+<pre>
+  VALID: {{ form.valid }}
+</pre>
