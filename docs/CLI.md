@@ -125,12 +125,12 @@ export type Activity = {
 ```bash
 # create a home component
 ng g c home
-# create a contact component
-ng g c contact
-# create a lazy module
-ng g m about --routing
-# with its component
+# create a about component
 ng g c about
+# create a lazy module for contact
+ng g m contact --routing
+# with its component
+ng g c contact
 # create a lazy module with routing pointing to register
 ng g m auth/register --route=auth/register -m=app
 ```
@@ -161,9 +161,15 @@ ng g m activities/detail-activity --route=:slug -m=activities
 
 ```bash
 # register form
-# 🫵🏼 practice: login form
 # validate register form
-# 🫵🏼 practice: validate login form (extract common code to a service)
+```
+
+### 🫵🏼 practice:
+
+- [ ] create the login for with validation and feedback
+
+```bash
+# refactoring to reuse code
 # generate service
 ng g s core/forms
 # generate form-error component
@@ -173,9 +179,17 @@ ng g c shared/form-error --export
 ## 6 - Http
 
 ```bash
+# create a fake backend
+npm install json-server json-server-auth --save-dev
+# create a api script
+# json-server-auth ./db/db.json -r ./db/rs.json
+```
+
+```bash
 # import HttpClientModule in shared module
 # import { HttpClientModule } from '@angular/common/http';
-# use httpClient on activities service to get a list of activities
+# use httpClient on activities service
+
 # generate users service
 ng g s core/users
 # post a new user on register service (use @Output)
@@ -184,7 +198,7 @@ npx ng g c register/register-form
 
 ### 🫵🏼 practice:
 
-- [ ] use httpClient on login service to login (use @Output)
+- [ ] use httpClient on login service to log in (use @Output)
 
 ## 🫵🏼 Final Practice
 
@@ -201,5 +215,5 @@ npx ng g c register/register-form
 
 ```bash
 npx ng build --prod
-npx lite-server --baseDir="dist/minsait-angular_basics-febrero"
+npx lite-server --baseDir="dist/fic-ng_dev-23_03"
 ```
