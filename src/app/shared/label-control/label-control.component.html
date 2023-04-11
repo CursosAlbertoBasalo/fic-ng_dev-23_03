@@ -1,1 +1,4 @@
-<p>label-control works!</p>
+<label [for]="controlName">
+  <span *ngIf="isRequired"> ❕ </span> {{ caption }}
+</label>
+<small *ngIf="showError">💣 {{ errorMessage }}</small>

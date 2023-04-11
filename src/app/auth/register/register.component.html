@@ -2,25 +2,36 @@
 <form [formGroup]="form">
   <fieldset>
     <div>
-      <label for="fullName">Full name</label>
-      <small *ngIf="showError('fullName')">🔥 {{ getError("fullName") }}</small>
-
-      <!-- <app-label-control
+      <app-label-control
+        [isRequired]="true"
         caption="Full name"
-        formControlName="fullName"
-        [errorMessage]="getError("fullName")" >
-      </app-label-control> -->
-
+        controlName="fullName"
+        [showError]="showError('fullName')"
+        [errorMessage]="getError('fullName')"
+      >
+      </app-label-control>
       <input id="fullName" name="fullName" formControlName="fullName" />
     </div>
     <div>
-      <label for="email">Email</label>
-      <small *ngIf="showError('email')"> 🔥 {{ getError("email") }} </small>
+      <app-label-control
+        [isRequired]="true"
+        caption="Email address"
+        controlName="email"
+        [showError]="showError('email')"
+        [errorMessage]="getError('email')"
+      >
+      </app-label-control>
       <input id="email" name="email" type="email" formControlName="email" />
     </div>
     <div>
-      <label for="password">Password</label>
-      <small *ngIf="showError('password')">🔥 {{ getError("password") }}</small>
+      <app-label-control
+        [isRequired]="true"
+        caption="Your Password"
+        controlName="password"
+        [showError]="showError('password')"
+        [errorMessage]="getError('password')"
+      >
+      </app-label-control>
       <input
         id="password"
         name="password"
@@ -29,10 +40,13 @@
       />
     </div>
     <div>
-      <label for="repeatedPassword">Repeat the password</label>
-      <small *ngIf="showError('repeatedPassword')"
-        >🔥 {{ getError("repeatedPassword") }}
-      </small>
+      <app-label-control
+        caption="Repeat your password"
+        controlName="repeatedPassword"
+        [showError]="showError('repeatedPassword')"
+        [errorMessage]="getError('repeatedPassword')"
+      >
+      </app-label-control>
       <input
         id="repeatedPassword"
         name="repeatedPassword"

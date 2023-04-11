@@ -2,13 +2,29 @@
 <form [formGroup]="form">
   <fieldset>
     <div>
-      <label for="email">Email</label>
-      <small *ngIf="showError('email')"> 🔥 {{ getError("email") }} </small>
+      <!-- <label for="email">Email</label>
+      <small *ngIf="showError('email')"> 🔥 {{ getError("email") }} </small> -->
+      <app-label-control
+        [isRequired]="true"
+        caption="Email"
+        controlName="email"
+        [showError]="showError('email')"
+        [errorMessage]="getError('email')"
+      >
+      </app-label-control>
+
       <input id="email" name="email" type="email" formControlName="email" />
     </div>
     <div>
-      <label for="password">Password</label>
-      <small *ngIf="showError('password')">🔥 {{ getError("password") }}</small>
+      <!-- <label for="password">Password</label>
+      <small *ngIf="showError('password')">🔥 {{ getError("password") }}</small> -->
+      <app-label-control
+        [isRequired]="true"
+        caption="Password"
+        controlName="password"
+        [showError]="showError('password')"
+        [errorMessage]="getError('password')"
+      ></app-label-control>
       <input
         id="password"
         name="password"
