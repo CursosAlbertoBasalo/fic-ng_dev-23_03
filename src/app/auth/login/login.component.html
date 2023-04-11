@@ -1,1 +1,21 @@
 <h3>🔐 Login</h3>
+<form [formGroup]="form">
+  <fieldset>
+    <div>
+      <label for="email">Email</label>
+      <small *ngIf="showError('email')"> 🔥 {{ getError("email") }} </small>
+      <input id="email" name="email" type="email" formControlName="email" />
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <small *ngIf="showError('password')">🔥 {{ getError("password") }}</small>
+      <input
+        id="password"
+        name="password"
+        type="password"
+        formControlName="password"
+      />
+    </div>
+  </fieldset>
+  <button [disabled]="form.invalid" (click)="onLoginClick()">Log in</button>
+</form>
