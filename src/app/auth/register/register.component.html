@@ -4,6 +4,13 @@
     <div>
       <label for="fullName">Full name</label>
       <small *ngIf="showError('fullName')">🔥 {{ getError("fullName") }}</small>
+
+      <!-- <app-label-control
+        caption="Full name"
+        formControlName="fullName"
+        [errorMessage]="getError("fullName")" >
+      </app-label-control> -->
+
       <input id="fullName" name="fullName" formControlName="fullName" />
     </div>
     <div>

@@ -168,12 +168,16 @@ ng g m activities/detail-activity --route=:slug -m=activities
 
 - [ ] create the login for with validation and feedback
 
+- [ ] generate a forms service to reuse logic
+
+- [ ] generate a label-control component to reuse presentation
+
 ```bash
 # refactoring to reuse code
 # generate service
 ng g s core/forms
 # generate form-error component
-ng g c shared/form-error --export
+ng g c shared/label-control --export
 ```
 
 ## 6 - Http
