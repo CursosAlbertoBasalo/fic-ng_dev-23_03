@@ -91,22 +91,5 @@
       "userId": 5
     }
   ],
-  "users": [
-    {
-      "acceptedTerms": true,
-      "email": "elon@tesla.com",
-      "fullName": "Elon",
-      "id": 1,
-      "password": "$2a$10$qembs9F.9U5GUSS4qKkpn.DwSZ.d56YS4HjIyHZDpmXvgWX5JEDN2",
-      "repeatedPassword": "1234"
-    },
-    {
-      "acceptedTerms": true,
-      "email": "elon.musk@tesla.com",
-      "fullName": "Elon",
-      "id": 2,
-      "password": "$2a$10$bnKCilK0B13Glr2gbCzgpej96zKyKGQFrGWuaRa10kaAoXpkXZAD6",
-      "repeatedPassword": "12345"
-    }
-  ]
+  "users": []
 }
