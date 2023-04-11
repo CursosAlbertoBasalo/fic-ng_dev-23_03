@@ -1,0 +1,33 @@
+<h3>{{ title }}</h3>
+<form [formGroup]="form">
+  <fieldset>
+    <div>
+      <app-label-control
+        [isRequired]="true"
+        caption="Email"
+        controlName="email"
+        [showError]="showError('email')"
+        [errorMessage]="getError('email')"
+      >
+      </app-label-control>
+
+      <input id="email" name="email" type="email" formControlName="email" />
+    </div>
+    <div>
+      <app-label-control
+        [isRequired]="true"
+        caption="Password"
+        controlName="password"
+        [showError]="showError('password')"
+        [errorMessage]="getError('password')"
+      ></app-label-control>
+      <input
+        id="password"
+        name="password"
+        type="password"
+        formControlName="password"
+      />
+    </div>
+  </fieldset>
+  <button [disabled]="form.invalid" (click)="onLoginClick()">Log in</button>
+</form>
