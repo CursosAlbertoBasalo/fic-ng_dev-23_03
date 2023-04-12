@@ -208,6 +208,8 @@ npx ng g c register/register-form
 
 - [ ] add a new activity
 
+- [ ] create a component for the filter-order-counting of a list
+
 ```bash
 # route /activities/new
 # form to edit an activity
