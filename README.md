@@ -48,7 +48,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ---
 
-## 🛠 (VS Code .dotfiles)[https://github.com/AlbertoBasalo/dotfiles]
+## 🛠 [VS Code .dotfiles](https://github.com/AlbertoBasalo/dotfiles)
 
 ### ⚙️ Settings
 
