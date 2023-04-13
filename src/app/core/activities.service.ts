@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ACTIVITIES } from '../data/activities.data';
 import { ACTIVITY_EMPTY, Activity } from '../data/activity.type';
 
@@ -6,10 +8,14 @@ import { ACTIVITY_EMPTY, Activity } from '../data/activity.type';
   providedIn: 'root',
 })
 export class ActivitiesService {
-  constructor() {}
+  constructor(private httpClient: HttpClient) {}
 
   getAll(): Activity[] {
     return ACTIVITIES;
+  }
+
+  getAll$(): Observable<Activity[]> {
+    return this.httpClient.get<Activity[]>('http://localhost:3000/activities');
   }
 
   getPublished(byTitle: string, sortOrder: number): Activity[] {

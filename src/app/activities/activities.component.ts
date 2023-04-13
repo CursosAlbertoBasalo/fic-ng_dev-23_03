@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ActivitiesService } from '../core/activities.service';
 import { Activity } from '../data/activity.type';
 
@@ -6,11 +7,21 @@ import { Activity } from '../data/activity.type';
   selector: 'app-activities',
   templateUrl: './activities.component.html',
   styleUrls: ['./activities.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ActivitiesComponent {
-  activities: Activity[];
-
-  constructor(activitiesService: ActivitiesService) {
-    this.activities = activitiesService.getAll();
+  title = 'Activities administration';
+  // activities: Activity[] = [];
+  activities$: Observable<Activity[]>;
+  constructor(
+    private activitiesService: ActivitiesService
+  ) //cdr: ChangeDetectorRef
+  {
+    //this.activities = activitiesService.getAll();
+    // activitiesService.getAll$().subscribe((body: Activity[]) => {
+    //   this.activities = body;
+    //   cdr.markForCheck();
+    // });
+    this.activities$ = activitiesService.getAll$();
   }
 }
