@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map, tap } from 'rxjs';
 import { ACTIVITIES } from '../data/activities.data';
 import { ACTIVITY_EMPTY, Activity } from '../data/activity.type';
 
@@ -27,6 +27,15 @@ export class ActivitiesService {
   getBySlug(slug: string): Activity {
     const foundActivity = ACTIVITIES.find((a) => a.slug === slug);
     return foundActivity || ACTIVITY_EMPTY;
+  }
+  getBySlug$(slug: string): Observable<Activity> {
+    const url = 'http://localhost:3000/activities/?slug=' + slug;
+
+    return this.httpClient.get<Activity[]>(url).pipe(
+      tap((arrayResponse) => console.warn(arrayResponse)),
+      map((arrayResponse) => arrayResponse[0] || ACTIVITY_EMPTY),
+      tap((itemExtracted) => console.warn(itemExtracted))
+    );
   }
 
   addNew(activity: Activity): void {

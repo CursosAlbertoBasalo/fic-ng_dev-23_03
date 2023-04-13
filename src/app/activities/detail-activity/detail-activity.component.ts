@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { ActivitiesService } from 'src/app/core/activities.service';
 import { UtilService } from 'src/app/core/util.service';
-import { ACTIVITY_EMPTY, Activity } from 'src/app/data/activity.type';
+import { Activity } from 'src/app/data/activity.type';
 
 @Component({
   selector: 'app-detail-activity',
@@ -10,7 +11,8 @@ import { ACTIVITY_EMPTY, Activity } from 'src/app/data/activity.type';
   styleUrls: ['./detail-activity.component.css'],
 })
 export class DetailActivityComponent {
-  activity: Activity = ACTIVITY_EMPTY;
+  //activity: Activity = ACTIVITY_EMPTY;
+  activity$: Observable<Activity>;
 
   constructor(
     activatedRoute: ActivatedRoute,
@@ -18,6 +20,7 @@ export class DetailActivityComponent {
     activitiesService: ActivitiesService
   ) {
     const slug: string = utilService.getParam(activatedRoute);
-    this.activity = activitiesService.getBySlug(slug);
+    // this.activity = activitiesService.getBySlug(slug);
+    this.activity$ = activitiesService.getBySlug$(slug);
   }
 }

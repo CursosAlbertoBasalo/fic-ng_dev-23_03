@@ -12,16 +12,14 @@ import { Activity } from '../data/activity.type';
 export class ActivitiesComponent {
   title = 'Activities administration';
   // activities: Activity[] = [];
-  activities$: Observable<Activity[]>;
+  activities$: Observable<Activity[]> = this.activitiesService.getAll$();
   constructor(
-    private activitiesService: ActivitiesService
-  ) //cdr: ChangeDetectorRef
-  {
+    private activitiesService: ActivitiesService //cdr: ChangeDetectorRef
+  ) {
     //this.activities = activitiesService.getAll();
     // activitiesService.getAll$().subscribe((body: Activity[]) => {
     //   this.activities = body;
     //   cdr.markForCheck();
     // });
-    this.activities$ = activitiesService.getAll$();
   }
 }
