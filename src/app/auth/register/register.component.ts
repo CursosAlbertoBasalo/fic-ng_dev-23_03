@@ -25,6 +25,8 @@ export class RegisterComponent {
   }
 
   onRegisterClick() {
+    // POST /users with the form data
+    // { fullName, email, password }
     console.log('Register button clicked');
     const password = this.form.value.password;
     const repeatedPassword = this.form.value.repeatedPassword;
