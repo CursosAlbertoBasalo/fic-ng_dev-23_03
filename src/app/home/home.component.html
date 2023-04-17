@@ -3,6 +3,7 @@
   <input type="search" placeholder="Search" (keyup)="onSearchChange($event)" />
   <button (click)="changeOrder()">Sort ⬆️</button>
 </header>
+<pre *ngIf="error">{{ error | json }}</pre>
 <ul>
   <li *ngFor="let activity of activities">
     <app-activity-item [activity]="activity"></app-activity-item>

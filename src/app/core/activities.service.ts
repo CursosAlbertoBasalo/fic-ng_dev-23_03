@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, catchError, map, of, tap } from 'rxjs';
+import { Observable, map, of, tap } from 'rxjs';
 import { ACTIVITIES } from '../data/activities.data';
 import { ACTIVITY_EMPTY, Activity } from '../data/activity.type';
 
@@ -38,10 +38,10 @@ export class ActivitiesService {
   getBySlug$(slug: string): Observable<Activity> {
     const url = this.url + '?slug=' + slug;
     return this.httpClient.get<Activity[]>(url).pipe(
-      catchError((error) => {
-        console.warn('Error cached: ', error);
-        return of([]);
-      }),
+      // catchError((error) => {
+      //   console.warn('Error cached: ', error);
+      //   return of([]);
+      // }),
       tap((arrayResponse) => console.warn(arrayResponse)),
       map((arrayResponse) => arrayResponse[0] || ACTIVITY_EMPTY),
       tap((itemExtracted) => console.warn(itemExtracted))

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, catchError } from 'rxjs';
 import { ActivitiesService } from 'src/app/core/activities.service';
 import { UtilService } from 'src/app/core/util.service';
 import { Activity } from 'src/app/data/activity.type';
@@ -13,7 +13,7 @@ import { Activity } from 'src/app/data/activity.type';
 export class DetailActivityComponent {
   //activity: Activity = ACTIVITY_EMPTY;
   activity$: Observable<Activity>;
-
+  error: any;
   constructor(
     activatedRoute: ActivatedRoute,
     utilService: UtilService,
@@ -21,6 +21,13 @@ export class DetailActivityComponent {
   ) {
     const slug: string = utilService.getParam(activatedRoute);
     // this.activity = activitiesService.getBySlug(slug);
-    this.activity$ = activitiesService.getBySlug$(slug);
+    this.activity$ = activitiesService.getBySlug$(slug).pipe(
+      catchError((error) => {
+        console.warn('Error cached: ', error);
+        this.error = error;
+        throw error;
+        //return of([]);
+      })
+    );
   }
 }

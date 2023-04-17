@@ -9,7 +9,7 @@ import { ACTIVITY_EMPTY, Activity } from '../data/activity.type';
 })
 export class HomeComponent {
   activities: Activity[] = [];
-
+  error: string = '';
   private order = 1;
   private searchTerm = '';
 
@@ -40,7 +40,10 @@ export class HomeComponent {
       .getPublished$(this.searchTerm, this.order)
       .subscribe({
         next: (body) => (this.activities = body),
-        error: (err) => (this.activities = [ACTIVITY_EMPTY]),
+        error: (err) => {
+          this.activities = [ACTIVITY_EMPTY];
+          this.error = err;
+        },
       });
   }
 }
