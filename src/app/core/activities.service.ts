@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, map, of, tap } from 'rxjs';
+import { Observable, map, tap } from 'rxjs';
 import { ACTIVITIES } from '../data/activities.data';
 import { ACTIVITY_EMPTY, Activity } from '../data/activity.type';
 
@@ -52,8 +52,8 @@ export class ActivitiesService {
     ACTIVITIES.push(activity);
   }
 
-  addNew$(activity: Activity): Observable<Activity> {
+  addNew$(activity: Partial<Activity>): Observable<Activity> {
     // ToDo: Implement the addNew$ method
-    return of(ACTIVITY_EMPTY);
+    return this.httpClient.post<Activity>(this.url, activity);
   }
 }

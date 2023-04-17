@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivitiesService } from 'src/app/core/activities.service';
-import { ACTIVITY_EMPTY } from 'src/app/data/activity.type';
+import { Activity } from 'src/app/data/activity.type';
 
 @Component({
   selector: 'app-new-activity',
@@ -10,7 +10,8 @@ import { ACTIVITY_EMPTY } from 'src/app/data/activity.type';
 export class NewActivityComponent {
   constructor(private activitiesService: ActivitiesService) {}
 
-  onNewClick() {
-    this.activitiesService.addNew(ACTIVITY_EMPTY);
+  onNewActivity(activity: Partial<Activity>) {
+    console.log(activity);
+    this.activitiesService.addNew$(activity).subscribe();
   }
 }
