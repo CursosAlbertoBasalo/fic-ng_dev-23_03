@@ -1,4 +1,4 @@
-<form>
+<form [formGroup]="form">
   <fieldset>
     <div>
       <label for="title"> Title </label>
@@ -73,7 +73,7 @@
           *ngFor="let ageCategory of ageCategories"
           [value]="ageCategory.id"
         >
-          {{ ageCategory.icon + ageCategory.caption }}
+          {{ ageCategory.icon + " " + ageCategory.caption }}
         </option>
       </select>
     </div>

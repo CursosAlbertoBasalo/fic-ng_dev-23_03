@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Activity } from 'db/activity.type';
 import { FormsService } from 'src/app/core/forms.service';
@@ -10,26 +10,7 @@ import { FormsService } from 'src/app/core/forms.service';
 })
 export class NewActivityFormComponent {
   @Output() newActivity = new EventEmitter<Partial<Activity>>();
-  ageCategories = [
-    {
-      caption: 'Adult',
-      icon: '👨🏼‍🦰',
-      id: 'adult',
-      userId: 1,
-    },
-    {
-      caption: 'Child',
-      icon: '👦🏼',
-      id: 'child',
-      userId: 1,
-    },
-    {
-      caption: 'Family',
-      icon: '👨‍👩‍👧‍👦',
-      id: 'family',
-      userId: 1,
-    },
-  ];
+  @Input() ageCategories: any[] = [];
   form = this.formBuilder.group({
     title: ['', [Validators.required, Validators.minLength(4)]],
     description: [''],
@@ -47,6 +28,7 @@ export class NewActivityFormComponent {
       100,
       [Validators.required, Validators.min(0), Validators.max(1000)],
     ],
+    currency: ['EUR', [Validators.required]],
     state: ['draft'],
     ageCategory: ['adult'],
   });

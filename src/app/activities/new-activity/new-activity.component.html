@@ -1,4 +1,7 @@
-<app-new-activity-form (newActivity)="onNewActivity($event)">
+<app-new-activity-form
+  [ageCategories]="ageCategories"
+  (newActivity)="onNewActivity($event)"
+>
 </app-new-activity-form>
 <pre *ngIf="error">
   {{ error }}
