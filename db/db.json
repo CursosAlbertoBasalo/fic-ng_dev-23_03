@@ -97,6 +97,19 @@
       "id": 1,
       "name": "Lisa Nadella",
       "password": "$2a$10$qgO/y3C3NS38PvH4SxcbNOdT6K5IVNnAg/qcQZfcpZEy.42S1x3d6"
+    },
+    {
+      "email": "richard@action.org",
+      "password": "$2a$10$lB3cFoGmGtEwFpLbNjprZuyxjUAI.i2zI5.xPpNeoriblcM40SvEy",
+      "fullName": "Richard",
+      "repeatedPassword": "1234",
+      "id": 2
+    },
+    {
+      "email": "jeff@acme.com",
+      "password": "$2a$10$4ithpEVP6W0R1h1ugVIB6.6k/Ump83.chIanItIVtiWmaelc81m/O",
+      "fullName": "Jeff",
+      "id": 3
     }
   ]
 }

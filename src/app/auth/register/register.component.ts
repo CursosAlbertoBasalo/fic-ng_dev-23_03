@@ -9,7 +9,9 @@ import { AccessToken } from 'src/app/data/credentials.type';
 })
 export class RegisterComponent {
   error: string = '';
+
   constructor(private httpClient: HttpClient) {}
+
   onRegister(user: any) {
     console.log('Register', user);
     this.httpClient

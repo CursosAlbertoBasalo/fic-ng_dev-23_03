@@ -39,7 +39,12 @@ export class RegisterFormComponent {
     }
     this.form.controls['repeatedPassword'].setErrors(errors);
     console.log('Form', this.form.value);
-    this.register.emit(this.form.value);
+    const user = {
+      fullName: this.form.value.fullName,
+      email: this.form.value.email,
+      password: this.form.value.password,
+    };
+    this.register.emit(user);
   }
 
   showError(controlName: string): boolean {
