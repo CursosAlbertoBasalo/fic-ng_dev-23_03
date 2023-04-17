@@ -1,1 +1,4 @@
 <app-login-form [title]="title" (login)="onLogin($event)"> </app-login-form>
+<pre *ngIf="error">
+  {{ error }}
+</pre>

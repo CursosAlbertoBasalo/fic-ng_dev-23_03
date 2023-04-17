@@ -91,5 +91,12 @@
       "userId": 5
     }
   ],
-  "users": []
+  "users": [
+    {
+      "email": "lisa@actib.it",
+      "id": 1,
+      "name": "Lisa Nadella",
+      "password": "$2a$10$qgO/y3C3NS38PvH4SxcbNOdT6K5IVNnAg/qcQZfcpZEy.42S1x3d6"
+    }
+  ]
 }

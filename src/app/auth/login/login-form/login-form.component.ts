@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormsService } from 'src/app/core/forms.service';
+import { Credentials } from 'src/app/data/credentials.type';
 
 @Component({
   selector: 'app-login-form',
@@ -9,7 +10,7 @@ import { FormsService } from 'src/app/core/forms.service';
 })
 export class LoginFormComponent {
   @Input() title: string = '';
-  @Output() login: EventEmitter<any> = new EventEmitter<any>();
+  @Output() login: EventEmitter<Credentials> = new EventEmitter<Credentials>();
 
   form: FormGroup;
   constructor(formBuilder: FormBuilder, private formsService: FormsService) {
