@@ -1,3 +1,5 @@
-<app-new-activity-form
-  (newActivity)="onNewActivity($event)"
-></app-new-activity-form>
+<app-new-activity-form (newActivity)="onNewActivity($event)">
+</app-new-activity-form>
+<pre *ngIf="error">
+  {{ error }}
+</pre>

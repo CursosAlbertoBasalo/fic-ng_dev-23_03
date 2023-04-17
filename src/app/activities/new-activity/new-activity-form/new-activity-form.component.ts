@@ -40,10 +40,13 @@ export class NewActivityFormComponent {
       [Validators.required, Validators.min(1), Validators.max(100)],
     ],
     maxParticipants: [
-      '10',
+      10,
       [Validators.required, Validators.min(1), Validators.max(100)],
     ],
-    price: [0, [Validators.required, Validators.min(0), Validators.max(1000)]],
+    price: [
+      100,
+      [Validators.required, Validators.min(0), Validators.max(1000)],
+    ],
     state: ['draft'],
     ageCategory: ['adult'],
   });
@@ -59,5 +62,10 @@ export class NewActivityFormComponent {
   getError(controlName: string): string {
     return this.formsService.getError(this.form, controlName);
   }
-  onNewClick() {}
+  onNewClick() {
+    if (this.form.valid) {
+      const activity: Partial<Activity> = this.form.value as Partial<Activity>;
+      this.newActivity.emit(activity);
+    }
+  }
 }

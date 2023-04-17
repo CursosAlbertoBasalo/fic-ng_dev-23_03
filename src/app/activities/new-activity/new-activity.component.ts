@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ActivitiesService } from 'src/app/core/activities.service';
 import { Activity } from 'src/app/data/activity.type';
 
@@ -8,10 +9,17 @@ import { Activity } from 'src/app/data/activity.type';
   styleUrls: ['./new-activity.component.css'],
 })
 export class NewActivityComponent {
-  constructor(private activitiesService: ActivitiesService) {}
+  error: string = '';
+  constructor(
+    private activitiesService: ActivitiesService,
+    private router: Router
+  ) {}
 
   onNewActivity(activity: Partial<Activity>) {
     console.log(activity);
-    this.activitiesService.addNew$(activity).subscribe();
+    this.activitiesService.addNew$(activity).subscribe({
+      next: () => this.router.navigate(['/activities']),
+      error: (error) => (this.error = error.error),
+    });
   }
 }
