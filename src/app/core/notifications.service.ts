@@ -15,7 +15,7 @@ export class NotificationsService {
     message: '',
   });
 
-  notify(message: string) {
+  notify(message: string): void {
     this.notification$.next({ message });
   }
 
