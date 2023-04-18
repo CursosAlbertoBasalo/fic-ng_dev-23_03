@@ -42,9 +42,9 @@ export class ActivitiesService {
       //   console.warn('Error cached: ', error);
       //   return of([]);
       // }),
-      tap((arrayResponse) => console.warn(arrayResponse)),
+      tap((arrayResponse) => console.info(arrayResponse)),
       map((arrayResponse) => arrayResponse[0] || ACTIVITY_EMPTY),
-      tap((itemExtracted) => console.warn(itemExtracted))
+      tap((itemExtracted) => console.info(itemExtracted))
     );
   }
 

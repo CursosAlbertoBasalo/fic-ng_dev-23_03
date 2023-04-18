@@ -18,7 +18,7 @@ export class RegisterComponent {
       .post<AccessToken>('http://localhost:3000/users', user)
       .subscribe({
         next: (accessToken) => console.log('Access token', accessToken),
-        error: (err) => (this.error = err.error),
+        // error: (err) => (this.error = err.error),
       });
   }
 }

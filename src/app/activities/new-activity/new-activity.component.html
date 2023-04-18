@@ -2,8 +2,7 @@
   *ngIf="ageCategories$ | async as ageCategories"
   [ageCategories]="ageCategories"
   (newActivity)="onNewActivity($event)"
->
-</app-new-activity-form>
+></app-new-activity-form>
 <pre *ngIf="error">
   {{ error }}
 </pre>
