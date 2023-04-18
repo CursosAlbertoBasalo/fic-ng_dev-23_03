@@ -10,26 +10,7 @@ import { Activity } from 'src/app/data/activity.type';
 })
 export class NewActivityComponent {
   error: string = '';
-  ageCategories = [
-    {
-      caption: 'Adult',
-      icon: '👨🏼‍🦰',
-      id: 'adult',
-      userId: 1,
-    },
-    {
-      caption: 'Child',
-      icon: '👦🏼',
-      id: 'child',
-      userId: 1,
-    },
-    {
-      caption: 'Family',
-      icon: '👨‍👩‍👧‍👦',
-      id: 'family',
-      userId: 1,
-    },
-  ];
+  ageCategories = [];
   constructor(
     private activitiesService: ActivitiesService,
     private router: Router

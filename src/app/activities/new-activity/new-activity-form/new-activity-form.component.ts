@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Activity } from 'db/activity.type';
 import { FormsService } from 'src/app/core/forms.service';
 
@@ -11,7 +11,7 @@ import { FormsService } from 'src/app/core/forms.service';
 export class NewActivityFormComponent {
   @Output() newActivity = new EventEmitter<Partial<Activity>>();
   @Input() ageCategories: any[] = [];
-  form = this.formBuilder.group({
+  form: FormGroup = this.formBuilder.group({
     title: ['', [Validators.required, Validators.minLength(4)]],
     description: [''],
     location: ['', [Validators.required, Validators.minLength(2)]],
