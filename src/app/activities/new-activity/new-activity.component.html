@@ -1,4 +1,5 @@
 <app-new-activity-form
+  *ngIf="ageCategories$ | async as ageCategories"
   [ageCategories]="ageCategories"
   (newActivity)="onNewActivity($event)"
 >
