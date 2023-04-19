@@ -10,6 +10,6 @@ export class ErrorHandlerService implements ErrorHandler {
       ? error.message
       : JSON.stringify(error);
     this.notifications.notify(message);
-    console.warn(message);
+    console.warn('Emitting', message);
   }
 }
