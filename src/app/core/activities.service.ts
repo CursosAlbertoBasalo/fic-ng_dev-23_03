@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map, tap } from 'rxjs';
 import { ACTIVITIES } from '../data/activities.data';
@@ -27,8 +27,12 @@ export class ActivitiesService {
   // }
 
   getPublished$(byTitle: string, sortOrder: number): Observable<Activity[]> {
-    // ToDo: Implement the search by title and sort by price
-    return this.httpClient.get<Activity[]>(this.url);
+    const params: HttpParams = new HttpParams()
+      .append('state', 'published')
+      .append('title_like', byTitle)
+      .append('_sort', 'price')
+      .append('_order', sortOrder > 0 ? 'ASC' : 'DESC');
+    return this.httpClient.get<Activity[]>(this.url, { params });
   }
 
   // getBySlug(slug: string): Activity {

@@ -1,6 +1,6 @@
 <header class="grid">
   <h3>List of activities</h3>
-  <input type="search" placeholder="Search" (keyup)="onSearchChange($event)" />
+  <input type="search" placeholder="Search" #searchInput />
   <button (click)="changeOrder()">Sort ⬆️</button>
 </header>
 <pre *ngIf="error">{{ error | json }}</pre>
