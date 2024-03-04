@@ -14,6 +14,68 @@ npm start
 npm run build
 ```
 
+```bash
+ng add @angular-eslint/schematics
+npm i prettier prettier-eslint eslint-config-prettier eslint-plugin-prettier -D
+```
+
+Prettier config
+
+```json
+{
+  "endOfLine": "auto",
+  "trailingComma": "all",
+  "tabWidth": 2,
+  "semi": true,
+  "singleQuote": true,
+  "printWidth": 120
+}
+```
+
+EsLint config
+
+```json
+{
+  "root": true,
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "plugin:prettier/recommended"
+      ],
+      "rules": {
+        "prettier/prettier": "warn",
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "lab",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "lab",
+            "style": "kebab-case"
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended", "plugin:@angular-eslint/template/accessibility"],
+      "rules": {}
+    }
+  ]
+}
+```
+
 ### Styles
 
 ```bash
@@ -27,16 +89,12 @@ Global styles in `src/styles.css`
 
 ```css
 body {
-  padding: 0.8rem;
-}
-:root {
-  --form-element-spacing-vertical: 0.25rem;
-  --form-element-spacing-horizontal: 0.25rem;
+  padding: 1rem;
 }
 span {
-  display: inline-block;
   margin-right: 0.5rem;
 }
+
 ```
 
 ## 1 - Components
